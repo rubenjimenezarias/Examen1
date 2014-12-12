@@ -66,4 +66,38 @@ public class Alimento
         System.out.println("Calorias: " + caloria + "g cada 100 gramos");
         System.out.println("Componente mayoritario: " + mayoritario + ".");
     }
+    
+    /**
+     * Metodo que devuelve la cantidad de proteina
+     */
+    public float proteina()
+    {
+        //Devuelve proteina
+        return proteina;
+    }
+    /**
+     * Metodo que devuelve la cantidad de carbohidrato
+     */
+    public float carbo()
+    {
+        //Devuelve proteina
+        return carbo;
+    }
+    /**
+     * Metodo que devuelve la cantidad de carbohidrato
+     */
+    public float grasa()
+    {
+        //Devuelve proteina
+        return grasa;
+    }
+    /**
+     * Metodo que devuelve la cantidad de carbohidrato
+     */
+    public float caloria()
+    {
+        //Devuelve proteina
+        return caloria;
+    }
+    
 }
