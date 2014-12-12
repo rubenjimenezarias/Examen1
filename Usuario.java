@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Usuario here.
  * 
@@ -17,6 +17,8 @@ public class Usuario
     // Para saber cual es el alimento con mas calorias ingeridas
     private String masCalorico;
     private float cuentaCaloria;
+    // Creamos una arraylist para almacenar los alimentos que ingiere el usuario
+    private ArrayList<Alimento> comido;
 
     /**
      * Constructor for objects of class Usuario
@@ -31,6 +33,7 @@ public class Usuario
         caloria = 0;
         masCalorico = "No ha comido nada.";
         cuentaCaloria = 0;
+        comido = new ArrayList<Alimento>();
     }
 
     /**
@@ -43,6 +46,8 @@ public class Usuario
             masCalorico = comida.nombre();
             cuentaCaloria = comida.caloria();
         }
+        //Añadimos el alimento a la lista.
+        comido.add(comida);
         // Sumamos los valores del alimento al usuario
         proteina = proteina + ((comida.proteina()/100)*gramos);
         carbo = carbo + ((comida.carbo()/100)*gramos);
@@ -63,19 +68,19 @@ public class Usuario
         
         // mostramos los datos por pantalla el estado del estomago del usuario
         System.out.println("Nombre: " + nomusu);
-        if (porproteina <= 0){
+        if (porproteina == 0){
             System.out.println("Proteina: " + proteina + " gramos.");
         }
         else {
             System.out.println("Proteina: " + proteina + " gramos.   " + porproteina + "%.");
         }
-        if (porcarbo <= 0){
+        if (porcarbo == 0){
             System.out.println("Proteina: " + carbo + " gramos.");
         }
         else {
             System.out.println("Proteina: " + carbo + " gramos.   " + porcarbo + "%.");
         }
-        if (porgrasa <= 0){
+        if (porgrasa == 0){
             System.out.println("Proteina: " + grasa + " gramos.");
         }
         else {
@@ -118,5 +123,24 @@ public class Usuario
     public void alimentoMasCaloricoIngerido()
     {
         System.out.println("El alimento mas calorico ingerido es " + masCalorico + ".");
+    }
+    /**
+     * Creo metodo para visualizar el alimento que indique el usuario
+     */
+    public void verAlimentoIngerido(int index)
+    {
+        int contador = comido.size();
+        if (contador == 0){
+            System.out.println("Este chico no ha comido nada");
+        }
+        else {
+            if(index >= 0 && index < comido.size()) {
+                Alimento elige = comido.get(index);
+                elige.muestraDatos();
+            }
+            else {
+                System.out.println("El valor introducido no esta entre 0 y " + (contador - 1) + ".");
+            }
+        }
     }
 }
