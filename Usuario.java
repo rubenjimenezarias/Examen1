@@ -14,6 +14,9 @@ public class Usuario
     private float carbo;
     private float grasa;
     private float caloria;
+    // Para saber cual es el alimento con mas calorias ingeridas
+    private String masCalorico;
+    private float cuentaCaloria;
 
     /**
      * Constructor for objects of class Usuario
@@ -26,6 +29,8 @@ public class Usuario
         carbo = 0;
         grasa = 0;
         caloria = 0;
+        masCalorico = "No ha comido nada.";
+        cuentaCaloria = 0;
     }
 
     /**
@@ -33,7 +38,12 @@ public class Usuario
      */
     public void comer(Alimento comida, float gramos)
     {
-        // cogemos el alimento 
+        // Comprobamos que el alimento sea o no el que tiene mas calorias.
+        if (cuentaCaloria < comida.caloria()){
+            masCalorico = comida.nombre();
+            cuentaCaloria = comida.caloria();
+        }
+        // Sumamos los valores del alimento al usuario
         proteina = proteina + ((comida.proteina()/100)*gramos);
         carbo = carbo + ((comida.carbo()/100)*gramos);
         grasa = grasa + ((comida.grasa()/100)*gramos);
@@ -101,5 +111,12 @@ public class Usuario
         else {
             System.out.println("Los dos han comido la misma cantidad de calorias.");
         }
+    }
+    /**
+     * Muestra por pantalla cual es el metodo mas calorico ingerido.
+     */
+    public void alimentoMasCaloricoIngerido()
+    {
+        System.out.println("El alimento mas calorico ingerido es " + masCalorico + ".");
     }
 }

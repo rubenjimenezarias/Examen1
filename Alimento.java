@@ -99,5 +99,13 @@ public class Alimento
         //Devuelve proteina
         return caloria;
     }
+    /**
+     * Metodo que devuelve la cantidad de carbohidrato
+     */
+    public String nombre()
+    {
+        //Devuelve proteina
+        return nombre;
+    }
     
 }
