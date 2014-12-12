@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Write a description of class Usuario here.
  * 
- * @author (your name) 
+ * @author (RUBEN JIMENEZ ARIAS) 
  * @version (a version number or a date)
  */
 public class Usuario
@@ -68,19 +68,19 @@ public class Usuario
         
         // mostramos los datos por pantalla el estado del estomago del usuario
         System.out.println("Nombre: " + nomusu);
-        if (porproteina == 0){
+        if (proteina == 0){
             System.out.println("Proteina: " + proteina + " gramos.");
         }
         else {
             System.out.println("Proteina: " + proteina + " gramos.   " + porproteina + "%.");
         }
-        if (porcarbo == 0){
+        if (carbo == 0){
             System.out.println("Proteina: " + carbo + " gramos.");
         }
         else {
             System.out.println("Proteina: " + carbo + " gramos.   " + porcarbo + "%.");
         }
-        if (porgrasa == 0){
+        if (grasa == 0){
             System.out.println("Proteina: " + grasa + " gramos.");
         }
         else {
@@ -88,20 +88,7 @@ public class Usuario
         }
         System.out.println("Calorias: " + caloria + " gramos.");
     }
-    /**
-     * Devuelve el nombre del Usuario
-     */
-    public String nombre()
-    {
-        return nomusu;
-    }
-    /**
-     * Devuelve las calorias del usuario
-     */
-    public float caloria()
-    {
-        return caloria;
-    }
+    
     /**
      * Comparamos entre dos usuarios quien ha comido mas calorias y lo mostramos por pantalla
      */
@@ -117,6 +104,7 @@ public class Usuario
             System.out.println("Los dos han comido la misma cantidad de calorias.");
         }
     }
+    
     /**
      * Muestra por pantalla cual es el metodo mas calorico ingerido.
      */
@@ -124,6 +112,7 @@ public class Usuario
     {
         System.out.println("El alimento mas calorico ingerido es " + masCalorico + ".");
     }
+    
     /**
      * Creo metodo para visualizar el alimento que indique el usuario
      */
@@ -142,5 +131,26 @@ public class Usuario
                 System.out.println("El valor introducido no esta entre 0 y " + (contador - 1) + ".");
             }
         }
+    }
+    
+    
+    
+    
+    
+    //METODOS UTILIZADOS PARA OTRAS CLASES
+    
+    /**
+     * Devuelve el nombre del Usuario
+     */
+    public String nombre()
+    {
+        return nomusu;
+    }
+    /**
+     * Devuelve las calorias del usuario
+     */
+    public float caloria()
+    {
+        return caloria;
     }
 }

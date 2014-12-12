@@ -2,7 +2,7 @@
 /**
  * Write a description of class Alimento here.
  * 
- * @author (your name) 
+ * @author (RUBEN JIMENEZ ARIAS) 
  * @version (a version number or a date)
  */
 public class Alimento
@@ -67,6 +67,12 @@ public class Alimento
         System.out.println("Componente mayoritario: " + mayoritario + ".");
     }
     
+    
+    
+    
+    
+    //METODOS UTILIZADOS PARA OTRAS CLASES
+    
     /**
      * Metodo que devuelve la cantidad de proteina
      */
@@ -107,5 +113,4 @@ public class Alimento
         //Devuelve proteina
         return nombre;
     }
-    
 }
